@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, 
+h2 {
+    text-decoration: underline;
+}
+
+td,
+th,
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+ul li {
+    margin: 5px;
+}
+
+a:hover {
+    color: red;
+    cursor: pointer;
+}
+
+img {
+    width: 15%;
+    height: 15%;
+    border: 1px dotted black;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.header {
+    border: 1px solid orange;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+
+
+
+

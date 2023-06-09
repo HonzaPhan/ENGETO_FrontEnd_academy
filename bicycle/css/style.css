@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap");
+
+* {
+  font-family: Ubuntu;
+  position: relative;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.latest {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -90%);
+  color: #ffffff;
+  background-color: #ff0000;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.image-bicycle {
+  width: 100%;
+}
+
+.size-table {
+  border-collapse: collapse;
+  border: 1px solid #000000;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  overflow: scroll;
+}
+
+.size-table td {
+  padding: 15px;
+  border: 1px solid #000000;
+}
+
+.colors {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: calc(150px + 20px);
+  height: calc(50px - 10px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.colors--blue {
+  background-color: rgb(33, 95, 217);
+}
+.colors--violet {
+  background-color: rgb(133, 49, 153);
+}
+.colors--grey {
+  background-color: rgb(123, 123, 123);
+}
+
+.video iframe {
+  width: 100%;
+  height: 50vh;
+}
+
+.price-with-tax {
+  text-align: right;
+}
+
+.price-czk {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: right;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #008000;
+  color: #ffffff;
+  border-radius: 5px;
+}

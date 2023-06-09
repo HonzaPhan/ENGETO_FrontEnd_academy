@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu {
+    color: white;
+    width: 100%;
+    top: 0;
+    background-color: #2d2727;
+    z-index: 1;
+    position: sticky;
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav-menu-list {
+flex: 1 1 auto;
+margin: 0 auto;
+}
+
+.nav-menu-item {
+  display: inline-block;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 0 auto;
+  width: a;
+}
+
+.container {
+    margin: 0 auto;
+}
