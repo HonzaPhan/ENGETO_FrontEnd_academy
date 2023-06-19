@@ -3,11 +3,14 @@
 :root {
   --background-color-primary: #33292a;
   --background-color-primary-light: #644b4f;
+  --background-color-white: #fff;
   --background-color-dark-white: #f2f2f2;
+  --background-color-dark-grey: #333333;
+
   --text-color-white: #fff;
   --text-color-black: #000;
   --text-color-pink: #efa69d;
-
+  --text-color-dark-pink: #e9877b;
 }
 
 * {

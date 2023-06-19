@@ -1,8 +1,12 @@
 /* Layout */
 .menu,
-.what-we-do-section,
-.footer-container {
+.what-we-do-section {
   background-color: var(--background-color-primary);
+  color: var(--text-color-white);
+}
+
+.footer-container {
+  background-color: var(--background-color-dark-grey);
   color: var(--text-color-white);
 }
 
@@ -12,7 +16,7 @@
 }
 
 /* Components */
-.menu-items a,
+.menu-link,
 .welcome-caption h1 {
   color: var(--text-color-white);
 }
@@ -23,4 +27,16 @@
 
 .button-contact {
   background-color: var(--background-color-dark-white);
+}
+
+.footer-content a {
+  color: var(--text-color-pink);
+}
+
+.footer-content a:hover {
+  color: var(--text-color-dark-pink);
+}
+
+.bar {
+  background-color: var(--background-color-white);
 }

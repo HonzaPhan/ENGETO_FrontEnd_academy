@@ -1,7 +1,7 @@
 /* PAGE layout */
 @media screen and (max-width: 768px) {
   .hero-section,
-  .activities-section,
+  .what-we-do-section,
   .trips-section,
   .contact-section,
   .reviews {
@@ -11,6 +11,55 @@
 
 /* Mobile resolution - Menu and Welcome-caption */
 @media screen and (max-width: 768px) {
+  .navigation {
+    background-color: var(--background-color-primary);
+  }
+
+  .menu {
+    display: flex;
+    position: sticky;
+    justify-content: right;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--background-color-white);
+  }
+
+  .menu-list {
+    position: fixed;
+    left: 100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: var(--background-color-primary);
+    width: 100%;
+    border-radius: 10px;
+    text-align: right;
+    transition: 0.3s;
+  }
+
+  .menu-list.active {
+    left: 0;
+  }
+
+  .menu-items {
+    margin: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   .welcome-caption h1 {
     position: absolute;
     text-align: right;
@@ -40,18 +89,21 @@
 /* Mobile resolution - What we do */
 @media screen and (max-width: 768px) {
   .what-we-do {
-    padding: 1.6rem;
+    padding: 3rem;
   }
-  .what-we-do-content,
+
+  .what-we-do-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
   .what-we-do-icons,
   .what-we-do-activities {
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
   }
-}
 
-/* Mobile resolution - What we do */
-@media screen and (max-width: 768px) {
   .activities-list,
   .activities-items {
     justify-content: center;
@@ -72,10 +124,6 @@
     font-size: 24px;
     gap: 1.5rem;
   }
-
-  .what-we-do-content {
-    padding: 0;
-  }
 }
 
 /* Mobile resolution - Our Trips */
@@ -86,6 +134,8 @@
     flex: 1;
     justify-content: center;
     gap: 0.5rem;
+    flex-basis: 100%;
+    flex-direction: column;
   }
 
   .trip-moment {
@@ -99,6 +149,7 @@
   .trip-label {
     width: 272px;
     height: 100%;
+    align-self: center;
   }
 }
 
@@ -106,7 +157,7 @@
 @media screen and (max-width: 768px) {
   .contact-section {
     display: flex;
-    padding: 3rem;
+    padding: 1rem;
     flex-direction: column;
     align-items: center;
   }
@@ -116,6 +167,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 3rem;
+    margin: 2rem;
   }
 }
 
@@ -140,3 +192,7 @@
     text-align: center;
   }
 }
+
+
+
+

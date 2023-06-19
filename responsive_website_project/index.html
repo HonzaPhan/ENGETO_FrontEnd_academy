@@ -11,29 +11,33 @@
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="./css/colors-layout.css" />
     <link rel="stylesheet" href="./css/media-queries.css" />
-    <script src="./src/index.js"></script>
     <title>Testing</title>
   </head>
   <body>
-    <header>
-      <nav class="menu">
+    <header class="navigation">
+      <nav class="menu" id="menu">
         <ul class="menu-list">
           <li class="menu-items">
-            <a href="#hero-section">About us</a>
+            <a href="#hero-section" class="menu-link">About us</a>
           </li>
           <li class="menu-items">
-            <a href="#what-we-do-section">What we do</a>
+            <a href="#what-we-do-section" class="menu-link">What we do</a>
           </li>
           <li class="menu-items">
-            <a href="#trips-section">Our Trips</a>
+            <a href="#trips-section" class="menu-link">Our Trips</a>
           </li>
           <li class="menu-items">
-            <a href="#contact-section">Where to go</a>
+            <a href="#contact-section" class="menu-link">Where to go</a>
           </li>
           <li class="menu-items">
-            <a href="#reviews">Reviews</a>
+            <a href="#reviews" class="menu-link">Reviews</a>
           </li>
         </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
       <img
         src="./img/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg"
@@ -234,9 +238,10 @@
       <div class="footer-container">
         <div class="footer-content">
           <a href="#">Contact</a>
-          <footer>© 2022 - Your Travel Assistant. All Rights Reserved.</footer>
+          <h6>© 2022 - Your Travel Assistant. All Rights Reserved.</h6>
         </div>
       </div>
     </footer>
+    <script src="./src/index.js"></script>
   </body>
 </html>

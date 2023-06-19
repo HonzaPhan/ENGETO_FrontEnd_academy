@@ -16,8 +16,21 @@
   justify-content: center;
 }
 
-.menu-items a {
+.menu-link {
   text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .image-tent {
@@ -197,7 +210,6 @@
 }
 
 .footer-content a {
-  color: var(--text-color-pink);
   display: inline-block;
   margin-bottom: 0.5rem;
 }
