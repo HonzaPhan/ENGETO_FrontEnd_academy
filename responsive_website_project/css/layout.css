@@ -58,7 +58,8 @@
 .reviews-container,
 .reviews-detail,
 .reviews-content,
-.reviews-header {
+.reviews-header,
+.review-person {
   display: flex;
 }
 
