@@ -1,0 +1,26 @@
+/* Layout */
+.menu,
+.what-we-do-section,
+.footer-container {
+  background-color: var(--background-color-primary);
+  color: var(--text-color-white);
+}
+
+.contact-section {
+  background-color: var(--background-color-primary-light);
+  color: var(--text-color-white);
+}
+
+/* Components */
+.menu-items a,
+.welcome-caption h1 {
+  color: var(--text-color-white);
+}
+
+.trip-label {
+  background-color: var(--background-color-dark-white);
+}
+
+.button-contact {
+  background-color: var(--background-color-dark-white);
+}

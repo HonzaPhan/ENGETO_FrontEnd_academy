@@ -1,0 +1,74 @@
+/* PAGE layout */
+.welcome-caption,
+.hero-section,
+.about-us,
+.trips-section,
+.menu-list,
+.what-we-do-content,
+.what-we-do-icons,
+.what-we-do-activities,
+.contact-container,
+.reviews-container,
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-section,
+.what-we-do-section,
+.trips-section,
+.contact-section,
+.reviews {
+  margin-bottom: 5rem;
+}
+
+/* Header - navigation */
+.welcome-caption {
+  position: relative;
+}
+
+/* HERO section */
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem;
+  gap: 45px;
+}
+
+/* ACTIVITIES section */
+
+/* TRIPS section */
+
+/* CONTACT section */
+.contact-section {
+  display: flex;
+  padding: 6rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* REVIEWS section */
+.reviews-container,
+.reviews-detail,
+.reviews-content,
+.reviews-header {
+  display: flex;
+}
+
+/* FOOTER */
+.footer-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-container {
+  padding: 2rem;
+  text-align: center;
+}

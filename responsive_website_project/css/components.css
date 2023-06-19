@@ -1,0 +1,197 @@
+/* Header - navigation */
+.menu-list,
+.menu-items {
+  display: flex;
+  flex: 1;
+}
+
+.menu-list {
+  list-style: none;
+  gap: 1rem;
+}
+
+.menu-items {
+  font-size: 20px;
+  margin: 1.5rem auto;
+  justify-content: center;
+}
+
+.menu-items a {
+  text-decoration: none;
+}
+
+.image-tent {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.welcome-caption h1 {
+  position: absolute;
+  text-align: right;
+  font-weight: bolder;
+  font-size: 100px;
+  bottom: 8px;
+  right: 16px;
+  inline-size: 450px;
+  margin-bottom: 4.5rem;
+}
+
+/* HERO section */
+.about-us-content,
+.about-us-image {
+  flex: 1;
+}
+
+.about-us-image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.about-us-header {
+  margin-bottom: 0.5rem;
+}
+
+/* ACTIVITIES section */
+.what-we-do-content {
+  padding: 5rem;
+  text-align: center;
+}
+
+.what-we-do-activities {
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
+
+.what-we-do-header {
+  margin-bottom: 1.5rem;
+}
+
+.activities-list,
+.activities-items {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.activities-items {
+  list-style: none;
+  flex-direction: column;
+  font-size: 24px;
+}
+
+.activity-icon {
+  width: 80px;
+  height: 80px;
+  fill: currentColor;
+}
+
+/* TRIPS section */
+.trips-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+  gap: 2rem;
+}
+
+.trip-moment,
+.trip-label {
+  width: 272px;
+  height: 222px;
+  border-radius: 5px;
+}
+
+.trip-label {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.trip-moment {
+  object-fit: cover;
+}
+
+/* CONTACT section */
+.contact-header,
+.contact-content {
+  flex: 1;
+}
+
+.contact-header {
+  flex-basis: 272px;
+}
+
+.contact-content,
+.contact-content p {
+  flex-basis: 65%;
+}
+
+.contact-content p {
+  margin-bottom: 2.3rem;
+}
+
+.button-contact {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* REVIEWS section */
+.reviews-content,
+.reviews-header,
+.review-person {
+  flex: 1;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-content,
+.reviews-detail {
+  gap: 5rem;
+}
+
+.reviews-header {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reviews-header p {
+  width: 332px;
+}
+
+.person-image,
+.person-description {
+  margin-bottom: 2rem;
+}
+
+.person-image {
+  width: 209px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.persons-fullname {
+  font-weight: bold;
+}
+
+/* FOOTER */
+.image-content {
+  width: 50%;
+  object-fit: cover;
+}
+
+.footer-content a {
+  color: var(--text-color-pink);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}

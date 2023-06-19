@@ -1,40 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Work+Sans:wght@200&display=swap");
+
+:root {
+  --background-color-primary: #33292a;
+  --background-color-primary-light: #644b4f;
+  --background-color-dark-white: #f2f2f2;
+  --text-color-white: #fff;
+  --text-color-black: #000;
+  --text-color-pink: #efa69d;
+
+}
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.nav-menu {
-    color: white;
-    width: 100%;
-    top: 0;
-    background-color: #2d2727;
-    z-index: 1;
-    position: sticky;
+html {
+  scroll-behavior: smooth;
 }
 
-.nav-menu-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+header {
+  /* position: sticky; 
+  top: 0; */
+  margin-bottom: 2rem;
 }
 
-.nav-menu-list {
-flex: 1 1 auto;
-margin: 0 auto;
+p {
+  font-weight: 400;
+  font-size: 16px;
 }
 
-.nav-menu-item {
-  display: inline-block;
-  padding: 1rem;
-  position: relative;
-  overflow: hidden;
-  flex-grow: 1;
-  margin: 0 auto;
-  width: a;
-}
-
-.container {
-    margin: 0 auto;
+h2 {
+  font-weight: 700;
+  font-size: 32px;
 }
