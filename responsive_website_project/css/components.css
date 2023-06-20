@@ -107,6 +107,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   flex: 1;
   gap: 2rem;
 }
@@ -119,10 +120,12 @@
 }
 
 .trip-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
 }
 
 .trip-moment {
