@@ -1,6 +1,6 @@
 # ENGETO_front-end_academy
-<h2>All tasks and projects from ENGETO front-end academy.</h2>
-<p>In this repository, you can find all tasks and projects given by ENGETO.</p>
+<h2>All tasks and projects from <a href="https://engeto.cz/">ENGETO</a> front-end academy.</h2>
+<p>In this repository, you can find all tasks and projects given by <a href="https://engeto.cz/">ENGETO</a>.</p>
 <p>In total, there are 12 lessons with live instructors where we learn front-end development from understanding issues, syntax, understanding and writing code to creating complex and responsive websites.</p>
 <p>What we have learned so far: </p>
 <ul>
