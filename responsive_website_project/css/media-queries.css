@@ -149,6 +149,7 @@
   .trip-label {
     width: 272px;
     height: 100%;
+    padding: 2rem;
     align-self: center;
   }
 }
