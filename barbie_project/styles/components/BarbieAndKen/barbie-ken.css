@@ -1,0 +1,52 @@
+#imgtext {
+  font-family: "Barbie", sans-serif;
+  color: var(--text-color-black);
+  font-size: 50px;
+}
+
+.image-full-size {
+  width: 25%;
+}
+
+.column-photo,
+.expanded-image-default {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.column-photo {
+  opacity: 0.5;
+  object-position: center;
+}
+
+.column-photo:hover {
+  opacity: 1;
+}
+
+.expanded-image-wrapper {
+  overflow: hidden;
+  height: 650px;
+}
+
+.expanded-image-default {
+  object-position: top;
+}
+
+@media screen and (max-width: 768px) {
+  #imgtext {
+    font-size: 40px;
+  }
+
+  .image-full-size {
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+
+  .expanded-image-wrapper,
+  #expandedImg {
+    display: none;
+  }
+}
