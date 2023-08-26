@@ -62,4 +62,47 @@
       </ul>
   </li>
 <br/>
+
+  <li>
+      Lesson 7 - Data types, creating html tags and adding them to the page
+      <ul>
+          <li>Data types, data type conversion and a calculator</li>
+          <li>Creation of HTML tags, filling and adding to the page</li>
+          <li>Practicing - restaurant payment application</li>
+      </ul>
+  </li>
+<br/>
+
+  <li>
+      Lesson 8 - Conditions, Logical Operators & Functions
+      <ul>
+          <li>True, false and conditions</li>
+          <li>Light, dark and white mode pages</li>
+          <li>Logical operators "and at the same time" and "or"</li>
+          <li>Functions</li>
+          <li>Memory Heap, Call Stack, Stack overflow, Memory Heap a garbage collector, Memory Leak</li>
+      </ul>
+  </li>
+<br/>
+
+  <li>
+      Lesson 9 - Events, Arrays, and Loops
+      <ul>
+          <li>Events in the browser - clicks, hovers and mouse-overs</li>
+          <li>Fields and selection of multiple HTML tags at once</li>
+          <li>Cycles and how to work with them in practice</li>
+      </ul>
+  </li>
+<br/>
+
+  <li>
+      Lesson 10 - Math and randomness, refactoring
+      <ul>
+          <li>Object Math and mathematical methods</li>
+          <li>Create a complex game - rolling the dice</li>
+          <li>Add and Remove classes using JavaScript</li>
+          <li>Bonus lesson - drag and drop elements on the page</li>
+      </ul>
+  </li>
+<br/>
 </ul>
