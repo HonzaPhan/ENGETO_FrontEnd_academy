@@ -1,7 +1,7 @@
 # ENGETO_front-end_academy
 <h2>All tasks and projects from <a href="https://engeto.cz/">ENGETO</a> front-end academy.</h2>
 <p>In this repository, you can find all tasks and projects given by <a href="https://engeto.cz/">ENGETO</a>.</p>
-<p>In total, there are 12 lessons with live instructors where we learn front-end development from understanding issues, syntax, understanding and writing code to creating complex and responsive websites.</p>
+<p>In total, there are 14 theoretical exercises and practical exercises (every week on Tuesday and Wednesday) with live instructors where we learn front-end development from understanding issues, syntax, understanding and writing code to creating complex and responsive websites.</p>
 <p>What we have learned so far: </p>
 <ul>
   <li>
@@ -102,6 +102,46 @@
           <li>Create a complex game - rolling the dice</li>
           <li>Add and Remove classes using JavaScript</li>
           <li>Bonus lesson - drag and drop elements on the page</li>
+      </ul>
+  </li>
+<br/>
+  
+  <li>
+      Lesson 11 - Form work and other practical projects
+      <ul>
+          <li>Work with the form, get data from the form and its validation</li>
+          <li>Scrolling on the page and reducing the header</li>
+          <li>We check the number of characters in the field</li>
+          <li>Bonus lesson - Email checking and regular expressions</li>
+      </ul>
+  </li>
+<br/>
+
+  <li>
+      Lesson 12 - Basics of object-oriented programming in JavaScript
+      <ul>
+          <li>Objects, OOP basics, constructor and attributes</li>
+          <li>Methods and Attributes</li>
+          <li>Procedural programming and its conversion to OOP</li>
+      </ul>
+  </li>
+<br/>
+
+  <li>
+      Lesson 13 - 4 key principles of object-oriented programming
+      <ul>
+          <li>Abstraction, encapsulation, inheritance, and polymorphism</li>
+          <li>Creating a banking application with principles</li>
+      </ul>
+  </li>
+<br/>
+
+  <li>
+      Lesson 14 - Asynchronous JavaScript and APIs
+      <ul>
+          <li>Asynchronous JavaScript, API</li>
+          <li>Work with the result of the API, async, await, try, catch</li>
+          <li>Practical examples with the API</li>
       </ul>
   </li>
 <br/>
