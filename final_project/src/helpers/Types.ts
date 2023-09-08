@@ -1,5 +1,5 @@
-interface IProps {
-
+interface Modes {
+   
 }
 
-export default IProps
+export default Modes

@@ -1,12 +1,8 @@
-import { ThemeProvider } from '@emotion/react';
-import theme from './themes/Theme';
-import FullScreenModal from './components/Modals/Modal';
+import Layout from './Layout';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <FullScreenModal />
-    </ThemeProvider>
+    <Layout />
   );
 }
 

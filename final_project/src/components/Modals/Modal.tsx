@@ -1,10 +1,19 @@
 import { KeyboardDoubleArrowRightOutlined } from "@mui/icons-material";
 import { Box, Button, Typography, Modal } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FullScreenModal = (): JSX.Element => {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(false);
+
+  useEffect(() => {
+    const hasModalBeenShownBefore = localStorage.getItem("hasModalBeenShown");
+    if (!hasModalBeenShownBefore) {
+      setOpen(true);
+      localStorage.setItem("hasModalBeenShown", "true");
+    }
+  }, []);
+
 
   const handleClose = (): void => {
     {
@@ -33,7 +42,7 @@ const FullScreenModal = (): JSX.Element => {
             width: "100vw",
             height: "100vh",
             backgroundImage: `url("https://cdn.pixabay.com/photo/2016/11/21/12/39/stars-1845140_1280.jpg")`,
-            backgroundSize: "cover",
+            backgroundSize: "100%",
             backgroundPosition: "center",
             backgroundColor: "black",
             gap: "2rem",
