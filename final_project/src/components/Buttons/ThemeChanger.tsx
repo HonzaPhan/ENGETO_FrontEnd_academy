@@ -1,7 +1,6 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
-import { Switch } from "@mui/material";
+import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useStyles } from "./ThemeChangerStyles";
 
 interface ThemeChangerProps {
   setMode: (theme: string) => void;
@@ -19,8 +18,6 @@ const ThemeChanger = ({ setMode }: ThemeChangerProps) => {
     }
   }, []);
 
-  const themeResponsive = useStyles;
-
   const toggleTheme = (): void => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -28,15 +25,34 @@ const ThemeChanger = ({ setMode }: ThemeChangerProps) => {
     setMode(newTheme);
   };
 
+  const isLightTheme = theme === "light";
+
   return (
-    <Switch
-      icon={<DarkMode />}
-      checked={theme === "light"}
-      checkedIcon={<LightMode />}
-      onChange={toggleTheme}
-      color="default"
-      className={themeResponsive}
-    />
+    <Button
+      sx={{
+        position: "sticky",
+        right: "1rem",
+        bottom: "2rem",
+        borderRadius: "15px",
+      }}
+      onClick={toggleTheme}
+    >
+      {isLightTheme ? (
+        <DarkMode
+          sx={{
+            width: "20px",
+            height: "20px",
+          }}
+        />
+      ) : (
+        <LightMode
+          sx={{
+            width: "20px",
+            height: "20px",
+          }}
+        />
+      )}
+    </Button>
   );
 };
 

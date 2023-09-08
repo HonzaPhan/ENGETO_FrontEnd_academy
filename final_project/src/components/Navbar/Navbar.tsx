@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
-const pages = ["Introduction", "Characters", "Story", "Trailer"];
+const pages = ["introduction", "characters", "story", "trailer"];
 
 const Navbar = (): JSX.Element => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -90,7 +90,7 @@ const Navbar = (): JSX.Element => {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="#"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -104,7 +104,14 @@ const Navbar = (): JSX.Element => {
           >
             BLEACH
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              gap: "2rem",
+              pl: "15px",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
