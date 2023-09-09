@@ -1,9 +1,10 @@
 import { Container, Typography, useMediaQuery } from "@mui/material";
 
-const Article = (): JSX.Element => {
+const IntroArticle = (): JSX.Element => {
   const isSmallScreen = useMediaQuery("(max-width:900px)");
+  
   return (
-    <Container id="introduction" sx={{ my: "5rem", p: "2rem"}}>
+    <Container id="Introduction" sx={{ my: "5rem", p: "2rem"}}>
       {isSmallScreen ? (
         <Typography
           component="h1"
@@ -21,7 +22,7 @@ const Article = (): JSX.Element => {
           BLEACH
         </Typography>
       )}
-      <Typography component="p" variant="h5">
+      <Typography component="p" variant="h5" mb={3}>
         is a captivating and iconic anime series that has left an indelible mark
         on the world of Japanese animation and has garnered a massive global
         fanbase. Created by <strong>Tite Kubo</strong>, this thrilling tale
@@ -29,7 +30,7 @@ const Article = (): JSX.Element => {
         development into a captivating narrative that has enthralled viewers for
         years.
       </Typography>
-      <Typography component="p" variant="h5">
+      <Typography component="p" variant="h5" mb={3}>
         Set in a world where souls, spirits, and monstrous creatures known as
         Hollows coexist, "Bleach" follows the adventures of Ichigo Kurosaki, a
         teenager with the unique ability to see ghosts. But Ichigo's life takes
@@ -40,7 +41,7 @@ const Article = (): JSX.Element => {
         defend his world from dark forces, uncover hidden secrets, and confront
         his own inner demons.
       </Typography>
-      <Typography component="p" variant="h5">
+      <Typography component="p" variant="h5" mb={3}>
         As he forms bonds with other Soul Reapers and faces formidable
         adversaries, "Bleach" takes viewers on a thrilling journey filled with
         epic battles, emotional depth, and a richly woven tapestry of mythology.
@@ -52,4 +53,4 @@ const Article = (): JSX.Element => {
   );
 };
 
-export default Article;
+export default IntroArticle;

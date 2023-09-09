@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FC, MouseEvent } from "react";
 import {
   AppBar,
   Box,
@@ -12,19 +12,32 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
-const pages = ["introduction", "characters", "story", "trailer"];
+interface NavbarProps {
+  // Odstraněno navbarRef
+}
 
-const Navbar = (): JSX.Element => {
+const pages = ["Introduction", "Characters", "Story", "Trailer"];
+
+const Navbar: FC<NavbarProps> = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
+  const scrollToSection = (section: string) => {
+    // Zde přidejte kód pro přesměrování na danou sekci
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      handleCloseNavMenu(); // Zavře navigační menu po přesměrování
+    }
+  };
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" id="navbar">
       <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Typography
@@ -80,8 +93,14 @@ const Navbar = (): JSX.Element => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page} onClick={() => scrollToSection(page)}>
+                  <Typography
+                    component="a"
+                    href={`#${page}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <Typography textAlign="center">{page}</Typography>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -115,7 +134,7 @@ const Navbar = (): JSX.Element => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => scrollToSection(page)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
@@ -127,4 +146,5 @@ const Navbar = (): JSX.Element => {
     </AppBar>
   );
 };
+
 export default Navbar;

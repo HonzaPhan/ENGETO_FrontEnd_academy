@@ -1,11 +1,25 @@
-import { Container } from "@mui/material";
+import { useState } from "react";
+import { Container, useMediaQuery, useTheme } from "@mui/material";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Typography from "@mui/material/Typography";
 
 const ListOfImages = (): JSX.Element => {
+  const theme = useTheme();
+  const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
+
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+
+  const handleMouseEnter = (index: number) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(-1);
+  };
+
   return (
-    <Container id="characters" sx={{ my: "5rem" }}>
+    <Container id="Characters" sx={{ my: "5rem" }}>
       <Typography
         variant="h3"
         component="h3"
@@ -13,14 +27,41 @@ const ListOfImages = (): JSX.Element => {
       >
         Main Characters
       </Typography>
-      <ImageList sx={{ width: "100%", height: 500 }} cols={3} rowHeight={500}>
-        {photoItemData.map((item) => (
-          <ImageListItem key={item.img}>
+      <ImageList
+        sx={{
+          width: "100%",
+          height: 500,
+          flexDirection: isMdScreen ? "column" : "row",
+        }}
+        cols={isMdScreen ? 3 : 1}
+        rowHeight={500}
+        gap={20}
+      >
+        {photoItemData.map((item, index) => (
+          <ImageListItem
+            key={item.img}
+            sx={{
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transform: index === hoveredIndex ? "scale(1.1)" : "scale(1.0)",
+              transition: "transform 0.2s ease-in-out",
+              width: isMdScreen ? "100%" : "auto",
+            }}
+          >
             <img
               src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
               srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={item.name}
               loading="lazy"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
             />
             <Typography variant="h6" component="p" sx={{ textAlign: "center" }}>
               {item.name}
