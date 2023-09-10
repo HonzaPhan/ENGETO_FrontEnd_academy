@@ -2,9 +2,9 @@ import { Container, Typography, useMediaQuery } from "@mui/material";
 
 const IntroArticle = (): JSX.Element => {
   const isSmallScreen = useMediaQuery("(max-width:900px)");
-  
+
   return (
-    <Container id="Introduction" sx={{ my: "5rem", p: "2rem"}}>
+    <Container id="Introduction" sx={{ my: "5rem", p: "2rem" }}>
       {isSmallScreen ? (
         <Typography
           component="h1"

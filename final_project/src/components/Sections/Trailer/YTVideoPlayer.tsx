@@ -31,6 +31,7 @@ const YTVideoPlayer = (): JSX.Element => {
           paddingBottom: "56.25%",
           height: "0",
           overflow: "hidden",
+          marginBottom: "5rem"
         }}
       >
         <iframe

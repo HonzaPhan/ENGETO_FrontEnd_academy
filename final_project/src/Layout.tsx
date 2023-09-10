@@ -3,17 +3,17 @@ import Navbar from "./components/Navbar/Navbar";
 import { CssBaseline } from "@mui/material";
 import { LightTheme, DarkTheme } from "../src/themes/Theme";
 import { ThemeProvider } from "@emotion/react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ThemeChanger from "./components/Buttons/ThemeChanger";
 import ListOfImages from "./components/Sections/Characters/ImageList";
 import ScrollUp from "./components/Buttons/ScrollUp";
 import IntroArticle from "./components/Sections/Introduction/IntroArticle";
 import StoryArticle from "./components/Sections/Story/StoryArticle";
 import YTVideoPlayer from "./components/Sections/Trailer/YTVideoPlayer";
+import MyForm from "./components/Forms/Form";
 
 const Layout = (): JSX.Element => {
   const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "light");
-  const navbarRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -34,7 +34,7 @@ const Layout = (): JSX.Element => {
       <ListOfImages />
       <StoryArticle />
       <YTVideoPlayer />
-
+      <MyForm />
       <ThemeChanger setMode={setTheme} />
     </ThemeProvider>
   );

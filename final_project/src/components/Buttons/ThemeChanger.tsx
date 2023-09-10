@@ -30,10 +30,11 @@ const ThemeChanger = ({ setMode }: ThemeChangerProps) => {
   return (
     <Button
       sx={{
-        position: "sticky",
-        right: "1rem",
+        position: "fixed",
+        left: "1rem",
         bottom: "2rem",
         borderRadius: "15px",
+        zIndex: 1
       }}
       onClick={toggleTheme}
     >

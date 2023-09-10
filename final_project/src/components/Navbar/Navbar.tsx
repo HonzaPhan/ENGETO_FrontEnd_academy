@@ -12,13 +12,9 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
-interface NavbarProps {
-  // Odstraněno navbarRef
-}
-
 const pages = ["Introduction", "Characters", "Story", "Trailer"];
 
-const Navbar: FC<NavbarProps> = () => {
+const Navbar: FC = (): JSX.Element => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
@@ -28,16 +24,15 @@ const Navbar: FC<NavbarProps> = () => {
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
   const scrollToSection = (section: string) => {
-    // Zde přidejte kód pro přesměrování na danou sekci
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      handleCloseNavMenu(); // Zavře navigační menu po přesměrování
+      handleCloseNavMenu();
     }
   };
 
   return (
-    <AppBar position="static" id="navbar">
+    <AppBar position="sticky" id="navbar">
       <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Typography
@@ -109,7 +104,7 @@ const Navbar: FC<NavbarProps> = () => {
             variant="h5"
             noWrap
             component="a"
-            href="#"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
