@@ -1,37 +1,26 @@
-import { FC } from "react";
-import { TextField, Typography } from "@mui/material";
-import { TContactFormSchema } from "../../helpers/Types";
-import { UseFormRegister } from "react-hook-form"
+import { ForwardedRef, forwardRef } from "react";
+import { TextField, TextFieldProps } from "@mui/material";
 
-interface CustomTextFieldProps {
-  name: keyof TContactFormSchema;
-  placeholder: string;
-  type: string;
-  error?: string;
-  register: UseFormRegister<TContactFormSchema>;
+interface MyFormInputProps<Variant extends "filled" | "standard" | "outlined"> {
+  nameAlias: string;
+  variant: Variant;
 }
 
-const CustomTextField: FC<CustomTextFieldProps> = ({
-  name,
-  placeholder,
-  type,
-  error,
-  register,
-}) => (
-  <>
-    <TextField
-      {...register(name)}
-      type={type}
-      placeholder={placeholder}
-      color = {error? "error": "primary"}
-      variant="outlined"
-      sx={{
-        width: "100%",
-        px: "2rem"
-      }}
-    />
-    {error && <Typography component="p" sx={{ color: "red", width: "100%", px: "2rem" }}>{error}</Typography>}
-  </>
+const MyFormInput = forwardRef(
+  <Variant extends "filled" | "standard" | "outlined">(
+    { nameAlias, variant, ...props }: MyFormInputProps<Variant>,
+    ref: ForwardedRef<HTMLDivElement>
+  ) => {
+    return (
+      <TextField
+        label={nameAlias}
+        {...(props as TextFieldProps<Variant>)}
+        sx={{ width: "70%" }}
+        name={nameAlias.replace(/ /g, "-")}
+        ref={ref}
+      />
+    );
+  }
 );
 
-export default CustomTextField
+export default MyFormInput;

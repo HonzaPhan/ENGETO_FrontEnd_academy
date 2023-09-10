@@ -10,7 +10,7 @@ import ScrollUp from "./components/Buttons/ScrollUp";
 import IntroArticle from "./components/Sections/Introduction/IntroArticle";
 import StoryArticle from "./components/Sections/Story/StoryArticle";
 import YTVideoPlayer from "./components/Sections/Trailer/YTVideoPlayer";
-import Form from "./components/Forms/Form";
+import MyForm from "./components/Forms/Form";
 
 const Layout = (): JSX.Element => {
   const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "light");
@@ -34,7 +34,7 @@ const Layout = (): JSX.Element => {
       <ListOfImages />
       <StoryArticle />
       <YTVideoPlayer />
-      <Form />
+      <MyForm />
       <ThemeChanger setMode={setTheme} />
     </ThemeProvider>
   );
