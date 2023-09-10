@@ -1,56 +1,37 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import {
-  FormControl,
-  TextField,
-  Button,
-  Typography,
-  Container,
-} from "@mui/material";
-import { useState } from "react";
-import Message from "../Messages/Message";
-import MyFormInput from "./FormInputs";
+import { useForm } from "react-hook-form";
+import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { TContactFormSchema, contactFormSchema } from "../../helpers/Types";
+import CustomTextField from "./FormInputs";
 
-interface FormData {
-  "First name": string;
-  "Last name": string;
-  "Email": string;
-  "Password": string;
-  "Confirm Password": string;
-}
-
-const MyForm = (): JSX.Element => {
+const Form = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormData>();
+  } = useForm<TContactFormSchema>({
+    resolver: zodResolver(contactFormSchema),
+  });
 
-  const [isPasswordMismatch, setIsPasswordMismatch] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [isErrorMessageOpen, setIsErrorMessageOpen] = useState(false);
-
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    if (data.Password !== data["Confirm Password"]) {
-      setIsPasswordMismatch(true);
-      setIsFormSubmitted(false);
-      setIsErrorMessageOpen(true);
-    } else {
-      const isAnyFieldEmpty = Object.values(data).some((value) => value === "");
-      if (isAnyFieldEmpty) {
-        setIsFormSubmitted(false);
-        setIsErrorMessageOpen(true);
-      } else {
-        setIsFormSubmitted(true);
-        setIsErrorMessageOpen(false);
-        reset();
-      }
-    }
+  const onSubmit = async (data: TContactFormSchema) => {
+    // TODO: submit to your own server
+    // ...
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    reset();
   };
 
   return (
-    <Container>
-      <FormControl sx={{ width: "100%" }}>
+    <Container sx={{ display: "flex", justifyContent: "center" }}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          alignItems: "center",
+        }}
+      >
         <Typography
           variant="h2"
           component="h2"
@@ -59,92 +40,59 @@ const MyForm = (): JSX.Element => {
         >
           Subscribe Now!
         </Typography>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "2rem",
-            alignItems: "center",
-          }}
-        >
-          <MyFormInput
-            nameAlias="First Name"
-            variant="filled"
-            {...register("First name", { required: true, maxLength: 50 })}
-          />
-          <MyFormInput
-            nameAlias="Last Name"
-            variant="filled"
-            {...register("Last name", { required: true, maxLength: 60 })}
-          />
-          <MyFormInput
-            nameAlias="Email"
-            variant="filled"
-            {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-          />
-          <MyFormInput
-            nameAlias="Password"
-            variant="filled"
-            {...register("Password", {
-              required: true,
-              minLength: 8,
-              maxLength: 30,
-            })}
-          />
-          <MyFormInput
-          variant="filled"
-            nameAlias="Confirm Password"
-            {...register("Confirm Password", {
-              required: true,
-              minLength: 8,
-              maxLength: 30,
-            })}
-          />
 
-          <Button variant="contained" color="info" type="submit">
+        <CustomTextField
+          name="name"
+          placeholder="Name"
+          type="text"
+          error={errors.name?.message}
+          register={register}
+        />
+
+        <CustomTextField
+          name="surname"
+          placeholder="Surname"
+          type="text"
+          error={errors.surname?.message}
+          register={register}
+        />
+
+        <CustomTextField
+          name="email"
+          placeholder="Email"
+          type="email"
+          error={errors.email?.message}
+          register={register}
+        />
+
+        <CustomTextField
+          name="password"
+          placeholder="Password"
+          type="password"
+          error={errors.password?.message}
+          register={register}
+        />
+
+        <CustomTextField
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          type="password"
+          error={errors.confirmPassword?.message}
+          register={register}
+        />
+        
+        <Box sx={{ display: "flex", justifyContent: "center", gap: "2rem"}}>
+          <Button disabled={isSubmitting} type="submit" variant="contained" color="primary">
             Submit
           </Button>
-          <Button
-            variant="contained"
-            color="error"
-            type="button"
-            onClick={() => {
-              reset();
-              setIsPasswordMismatch(false);
-              setIsFormSubmitted(false);
-            }}
-          >
-            Clear Form
+
+          <Button disabled={isSubmitting} type="reset" variant="contained" color="error">
+            Clear
           </Button>
-          {!isFormSubmitted && isPasswordMismatch && (
-            <Message
-              message="Passwords do not match"
-              severity="error"
-              open={isErrorMessageOpen}
-              handleClose={() => setIsErrorMessageOpen(false)}
-            />
-          )}
-          {!isFormSubmitted && !isPasswordMismatch && (
-            <Message
-              message="All required fields are not filled."
-              severity="error"
-              open={isErrorMessageOpen}
-              handleClose={() => setIsErrorMessageOpen(false)}
-            />
-          )}
-          {isFormSubmitted && (
-            <Message
-              message="Form submitted successfully!"
-              severity="success"
-              open={isFormSubmitted}
-              handleClose={() => setIsFormSubmitted(false)}
-            />
-          )}
-        </form>
-      </FormControl>
+        </Box>
+      </form>
     </Container>
   );
 };
 
-export default MyForm;
+export default Form;
