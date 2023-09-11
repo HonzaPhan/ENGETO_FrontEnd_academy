@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+My final ENGETO project is themed around `Bleach`, which is one of the greatest anime series of all time. Are you ready to explore more?
+
+To run the code you have to use `npm i`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
