@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { Stack, Snackbar, Slide, Alert } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
 interface MessageProps {
   message: string;
@@ -15,20 +15,11 @@ const Message = ({ message, severity, open, handleClose }: MessageProps): JSX.El
     setIsVisible(open);
   }, [open]);
 
-  useEffect(() => {
-    if (isVisible) {
-      setTimeout(() => {
-        setIsVisible(false);
-        handleClose();
-      }, 3500);
-    }
-  }, [isVisible, handleClose]);
-
   return (
     <Stack spacing={2} sx={{ width: "100%" }}>
       <Snackbar
         open={isVisible}
-        autoHideDuration={null}
+        autoHideDuration={3000}
         onClose={handleClose}
         TransitionComponent={Slide}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
