@@ -13,7 +13,7 @@ const FullScreenModal = (): JSX.Element => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(false);
 
   useEffect(() => {
