@@ -1,5 +1,6 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { Button } from "@mui/material";
+import { grey } from "@mui/material/colors";
 import { useEffect, useState } from "react";
 
 interface ThemeChangerProps {
@@ -29,12 +30,15 @@ const ThemeChanger = ({ setMode }: ThemeChangerProps) => {
 
   return (
     <Button
+      color="inherit"
       sx={{
         position: "fixed",
         left: "1rem",
         bottom: "2rem",
         borderRadius: "15px",
-        zIndex: 1
+        width: "25px",
+        backgroundColor: "transparent",
+        zIndex: 1,
       }}
       onClick={toggleTheme}
     >

@@ -1,27 +1,24 @@
-import { Container, Typography, useMediaQuery } from "@mui/material";
+import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const StoryArticle = (): JSX.Element => {
-  const isSmallScreen = useMediaQuery("(max-width:900px)");
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Container id="Story" sx={{ my: "5rem", p: "2rem" }}>
-      {isSmallScreen ? (
-        <Typography
-          component="h1"
-          variant="h2"
-          sx={{ mb: "2rem", letterSpacing: "0.2rem" }}
-        >
-          STORY
-        </Typography>
-      ) : (
-        <Typography
-          component="h1"
-          variant="h1"
-          sx={{ mb: "3rem", letterSpacing: "0.2rem" }}
-        >
-          STORY
-        </Typography>
-      )}
+    <Container
+      id="Story"
+      sx={{
+        mb: isSmallScreen ? "3rem" : "5rem",
+        p: "2rem",
+      }}
+    >
+      <Typography
+        variant="h3"
+        component="h3"
+        sx={{ mb: "2rem", letterSpacing: "0.5rem", py: "1rem" }}
+      >
+        STORY
+      </Typography>
 
       <Typography variant="h5" component="p" mb={3}>
         Ichigo Kurosaki gained the powers of a Soul Reaper through a chance

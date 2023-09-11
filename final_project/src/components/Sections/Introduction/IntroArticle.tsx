@@ -1,27 +1,41 @@
+import { Box, useTheme } from "@mui/material";
 import { Container, Typography, useMediaQuery } from "@mui/material";
 
 const IntroArticle = (): JSX.Element => {
-  const isSmallScreen = useMediaQuery("(max-width:900px)");
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Container id="Introduction" sx={{ my: "5rem", p: "2rem" }}>
-      {isSmallScreen ? (
-        <Typography
-          component="h1"
-          variant="h2"
-          sx={{ mb: "2rem", letterSpacing: "0.2rem" }}
-        >
-          BLEACH
-        </Typography>
-      ) : (
-        <Typography
-          component="h1"
-          variant="h1"
-          sx={{ mb: "3rem", letterSpacing: "0.2rem" }}
-        >
-          BLEACH
-        </Typography>
-      )}
+    <Container
+      id="Introduction"
+      sx={{
+        mt: isSmallScreen ? "3rem" : "5rem",
+        mb: isSmallScreen ? "0" : "5rem",
+        p: "2rem",
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          background: isSmallScreen
+            ? "none"
+            : `linear-gradient(64deg, #C3CEDA 20%, transparent 0%),
+          linear-gradient(296deg, #C3CEDA 20%, transparent 0%)`,
+        }}
+      ></Box>
+      <Typography
+        component="h1"
+        variant={isSmallScreen ? "h2" : "h1"}
+        sx={{ mb: isSmallScreen ? "2rem" : "3rem", letterSpacing: "0.2rem" }}
+      >
+        BLEACH
+      </Typography>
+
       <Typography component="p" variant="h5" mb={3}>
         is a captivating and iconic anime series that has left an indelible mark
         on the world of Japanese animation and has garnered a massive global

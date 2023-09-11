@@ -1,9 +1,19 @@
 import { KeyboardDoubleArrowRightOutlined } from "@mui/icons-material";
-import { Box, Button, Typography, Modal } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Modal,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 
 const FullScreenModal = (): JSX.Element => {
-  const [open, setOpen] = useState<boolean>(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const [open, setOpen] = useState<boolean>(true);
   const [close, setClose] = useState<boolean>(false);
 
   useEffect(() => {
@@ -13,7 +23,6 @@ const FullScreenModal = (): JSX.Element => {
       localStorage.setItem("hasModalBeenShown", "true");
     }
   }, []);
-
 
   const handleClose = (): void => {
     {
@@ -37,14 +46,15 @@ const FullScreenModal = (): JSX.Element => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: isSmallScreen ? "center" : "end",
             flexDirection: "column",
             width: "100vw",
             height: "100vh",
-            backgroundImage: `url("https://cdn.pixabay.com/photo/2016/11/21/12/39/stars-1845140_1280.jpg")`,
-            backgroundSize: "100%",
+            backgroundImage: isSmallScreen
+              ? `url("https://images.squarespace-cdn.com/content/51b3dc8ee4b051b96ceb10de/1683325674536-UV4DVR77YH46NDXQ7KMM/bleach-tybw-1.jpg?format=1500w&content-type=image%2Fjpeg")`
+              : `url("https://a.storyblok.com/f/178900/1200x675/fca4fc5359/bleach-thousand-year-blood-war-part-2-titelbild.jpeg")`,
+            backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundColor: "black",
             gap: "2rem",
             transition: "opacity 1s ease, transform 1s ease",
             transform: close ? "translateX(-100%)" : "translateX(0)",
@@ -53,25 +63,25 @@ const FullScreenModal = (): JSX.Element => {
         >
           <Typography
             id="modal-modal-title"
-            variant="h1"
-            component="h1"
-            sx={{ color: "white", textAlign: "center", fontWeight: "bold"}}
+            variant={isSmallScreen ? "h4" : "h1"}
+            component={isSmallScreen ? "h4" : "h1"}
+            sx={{
+              color: isSmallScreen ? "white" : "black",
+              textAlign: "center",
+              fontWeight: "bold",
+              letterSpacing: isSmallScreen ? "0.5rem" : "2rem",
+            }}
           >
-            Welcome to my final project!
-          </Typography>
-          <Typography
-            id="modal-modal-description"
-            variant="h5"
-            component="p"
-            sx={{ mt: 2, color: "white", fontWeight: "bold"}}
-          >
-            Are you ready to explore my page?
+            BLEACH
           </Typography>
           <Button
-            variant="outlined"
             endIcon={<KeyboardDoubleArrowRightOutlined />}
             onClick={handleClose}
             size="large"
+            sx={{
+              mr: isSmallScreen ? "0" : "11rem",
+              color: isSmallScreen ? "white" : "black",
+            }}
           >
             Explore more
           </Button>

@@ -19,7 +19,7 @@ const ScrollUp: FC<Props> = ({ window, onClick }) => {
       <Box
         onClick={onClick}
         role="presentation"
-        sx={{ position: "fixed", right: "1rem", bottom: "2rem", zIndex: 1}}
+        sx={{ position: "fixed", right: "1rem", bottom: "2rem", zIndex: 1 }}
       >
         <Fab size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />

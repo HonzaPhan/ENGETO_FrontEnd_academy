@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { TextField, Typography } from "@mui/material";
 import { TContactFormSchema } from "../../helpers/Types";
-import { UseFormRegister } from "react-hook-form"
+import { UseFormRegister } from "react-hook-form";
 
-interface CustomTextFieldProps {
+interface FormInputProps {
   name: keyof TContactFormSchema;
   placeholder: string;
   type: string;
@@ -11,7 +11,7 @@ interface CustomTextFieldProps {
   register: UseFormRegister<TContactFormSchema>;
 }
 
-const CustomTextField: FC<CustomTextFieldProps> = ({
+const FormInput: FC<FormInputProps> = ({
   name,
   placeholder,
   type,
@@ -23,15 +23,22 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
       {...register(name)}
       type={type}
       placeholder={placeholder}
-      color = {error? "error": "primary"}
+      color={error ? "error" : "primary"}
       variant="outlined"
       sx={{
         width: "100%",
-        px: "2rem"
+        px: "2rem",
       }}
     />
-    {error && <Typography component="p" sx={{ color: "red", width: "100%", px: "2rem" }}>{error}</Typography>}
+    {error && (
+      <Typography
+        component="p"
+        sx={{ color: "red", width: "100%", px: "2rem" }}
+      >
+        {error}
+      </Typography>
+    )}
   </>
 );
 
-export default CustomTextField
+export default FormInput;

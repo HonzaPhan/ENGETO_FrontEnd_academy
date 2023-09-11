@@ -15,7 +15,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 const pages = ["Introduction", "Characters", "Story", "Trailer"];
 
 const Navbar: FC = (): JSX.Element => {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = useState<HTMLElement | null>(null);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);

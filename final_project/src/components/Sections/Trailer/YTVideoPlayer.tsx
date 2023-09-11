@@ -1,28 +1,31 @@
-import { Box, Container, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const YTVideoPlayer = (): JSX.Element => {
-  const isSmallScreen = useMediaQuery("(max-width:900px)");
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <>
-      <Container id="Trailer">
+      <Container
+        id="Trailer"
+        sx={{
+          px: "2rem",
+        }}
+      >
         <Box>
-          {isSmallScreen ? (
-            <Typography
-              component="h1"
-              variant="h2"
-              sx={{ mb: "2rem", letterSpacing: "0.2rem" }}
-            >
-              TRAILER
-            </Typography>
-          ) : (
-            <Typography
-              component="h1"
-              variant="h1"
-              sx={{ mb: "3rem", letterSpacing: "0.2rem" }}
-            >
-              TRAILER
-            </Typography>
-          )}
+          <Typography
+            variant="h3"
+            component="h3"
+            sx={{ mb: "2rem", letterSpacing: "0.5rem", py: "1rem" }}
+          >
+            TRAILER
+          </Typography>
         </Box>
       </Container>
       <Container
@@ -31,7 +34,7 @@ const YTVideoPlayer = (): JSX.Element => {
           paddingBottom: "56.25%",
           height: "0",
           overflow: "hidden",
-          marginBottom: "5rem"
+          marginBottom: isSmallScreen ? "3rem" : "5rem",
         }}
       >
         <iframe

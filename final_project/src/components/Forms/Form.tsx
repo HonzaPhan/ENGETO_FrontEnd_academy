@@ -1,10 +1,20 @@
 import { useForm } from "react-hook-form";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TContactFormSchema, contactFormSchema } from "../../helpers/Types";
-import CustomTextField from "./FormInputs";
+import FormInput from "./FormInputs";
 
 const Form = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   const {
     register,
     handleSubmit,
@@ -22,7 +32,9 @@ const Form = () => {
   };
 
   return (
-    <Container sx={{ display: "flex", justifyContent: "center" }}>
+    <Container
+      sx={{ display: "flex", justifyContent: "center", mb: "5rem", p: "2rem" }}
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{
@@ -33,15 +45,18 @@ const Form = () => {
         }}
       >
         <Typography
-          variant="h2"
-          component="h2"
-          textAlign="center"
-          sx={{ margin: "2rem" }}
+          component={isSmallScreen ? "h3" : "h2"}
+          variant={isSmallScreen ? "h3" : "h2"}
+          sx={{
+            mb: isSmallScreen ? "2rem" : "3rem",
+            letterSpacing: "0.2rem",
+            textAlign: isSmallScreen ? "center" : "left",
+          }}
         >
-          Subscribe Now!
+          SUBSCRIBE NOW!
         </Typography>
 
-        <CustomTextField
+        <FormInput
           name="name"
           placeholder="Name"
           type="text"
@@ -49,7 +64,7 @@ const Form = () => {
           register={register}
         />
 
-        <CustomTextField
+        <FormInput
           name="surname"
           placeholder="Surname"
           type="text"
@@ -57,7 +72,7 @@ const Form = () => {
           register={register}
         />
 
-        <CustomTextField
+        <FormInput
           name="email"
           placeholder="Email"
           type="email"
@@ -65,7 +80,7 @@ const Form = () => {
           register={register}
         />
 
-        <CustomTextField
+        <FormInput
           name="password"
           placeholder="Password"
           type="password"
@@ -73,20 +88,30 @@ const Form = () => {
           register={register}
         />
 
-        <CustomTextField
+        <FormInput
           name="confirmPassword"
           placeholder="Confirm Password"
           type="password"
           error={errors.confirmPassword?.message}
           register={register}
         />
-        
-        <Box sx={{ display: "flex", justifyContent: "center", gap: "2rem"}}>
-          <Button disabled={isSubmitting} type="submit" variant="contained" color="primary">
+
+        <Box sx={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
+          <Button
+            disabled={isSubmitting}
+            type="submit"
+            variant="contained"
+            color="primary"
+          >
             Submit
           </Button>
 
-          <Button disabled={isSubmitting} type="reset" variant="contained" color="error">
+          <Button
+            disabled={isSubmitting}
+            type="reset"
+            variant="contained"
+            color="error"
+          >
             Clear
           </Button>
         </Box>
